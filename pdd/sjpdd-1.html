@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    
+    <meta charset="utf-8">
+    <head>
+        <title>pdd-3</title>
+        <script src="js/jquery-3.5.0.min.js"></script>
+        <script>
+
+        </script>
+        <style>
+        ul{
+            list-style: none; 
+            padding: 0;
+        
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 22px;
+            font-family: 宋体;
+        }
+         .area1{
+             position: fixed;
+             height:80px;
+             width:100%;
+             text-align: center;
+             z-index: 999;
+         }
+         input::-ms-input-placeholder{
+             text-align: center;
+         }
+         input::-webkit-input-placeholder{
+             text-align:center;
+         }
+         p{
+             font-size: 22px;
+             font-family: 宋体;
+         }
+         .area1 p{
+             margin-top: 0px;
+         }
+         .input1{
+             position: absolute;
+             height: 40px;
+             width: 100%;
+             border-radius: 20px;
+             background-color: raba(#000000,0.3);
+             top: 30px;
+             left: 0px;
+         }
+         .area2{
+
+             height: 100%;
+             width: 60px;
+             position: fixed;
+             top: 85px;
+             z-index: 999;
+         }
+         .area2 li{
+             width: 60px;
+             height:40px;
+             line-height: 40px;
+             display: block;
+             margin: auto;
+             text-align: center;
+         }
+
+         .area2 ul li:hover{
+             background:grey;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="area1">
+               <p> 分类 </p>
+               <input type="text" class="input1" placeholder="古代服装">
+        </div> 
+        <div class="area2">
+             <ul>
+                 <li><a href="#">推荐</a></li>
+                 <li><a href="#">鞋包</a></li>
+                 <li><a href="#">食品</a></li>
+             </ul>
+        </div>
+
+
+    </body>
+</html>

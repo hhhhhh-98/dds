@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+         <meta charset="utf-8">
+         <title>pdd-2</title>
+         <script src="js/jquery-3.5.0.min.js"></script>
+         <style>
+           .area1{
+               height:170px;
+               position: fixed;
+               top: 0;
+               right: 0;
+               left: 0;
+               z-index: 999;
+               background-color: #fff;
+           }
+           .area1 img{
+               margin-top: 40px;
+           }
+           ul{
+               position: absolute;
+               padding: 0;
+           }
+            li{
+            list-style: none;
+            position: relative;
+            display: inline-block;
+           }
+           a{
+            text-decoration: none;
+            font-family: 宋体;
+            font-weight: 500;
+           }
+           .area1 ul{
+               position: absolute;
+               top: 50%;
+               left: 20%;
+               line-height: 30px;
+               margin-top: -5px;
+      
+           }
+           .area1 ul :last-child{
+               border: none;
+           }
+           .area1 li{
+               padding-left: 20px;
+               padding-right: 20px;
+               border-right:2px solid #6c6c6c;       
+           }
+           .area1 a{     
+               color: #6c6c6c;   
+               font-size: 25px;
+           }
+           .area2{
+               height: 80px;
+               line-height: 80px;
+               position: fixed;
+               top:170px;
+               left: 0;
+               right:0;
+               background-color:#d8374d;
+               z-index: 999;
+           }
+           .area2 ul{
+               margin: auto;
+        
+           }
+           .area2 li{
+              font-size: 30px;
+              width: 300px;
+              text-align: center;  
+              height: 80px;
+           }
+           .area2 a{
+               color: white;
+           }
+           .area2 ul li:hover {
+               background:red;               
+           }  
+           .area3{
+               background-image: url(images/pdd-10.png);
+               background-size: cover;
+               width:3000px;
+               height: 800px;
+               margin-top: 260px;
+           }
+           .area4{
+              position: absolute;
+              top: 40%;
+              left: 88%;
+              background-color: white;
+              text-align: center;
+              border-radius: 5px;
+              padding: 20px;
+          
+          }
+          input{
+              height: 70px;
+              width: 600px;
+              border-radius: 5px;
+              background-color: rgba(#000,0.2);
+              color: rgba(#000,0.2);
+              line-height: 70px;
+              font-size: 30px;
+              margin-top: 20px;      
+          }
+          button{
+              height: 70px;
+              width: 600px;
+              border-radius: 5px;
+              background-color: rgba(#000,0.2);
+              color: #ccc;
+              line-height: 70px;
+              font-size: 30px;
+              margin-top: 20px;
+              background-color:#d8374d;
+              font-weight: bolder;
+              color: white;
+              cursor: pointer;
+          }
+          .input2{
+              width: 270px;
+              float: left;
+             margin-right: 40px;
+          }
+          .btn2{
+              width: 270px;
+              height: 80px;
+          }
+          .txt1{
+              float: left;
+              font-size: 30px;
+              opacity: 0.8;
+          }
+          .area4 a{
+              float: right;
+              font-size: 20px;
+              text-decoration:underline;
+              margin-top: 10px;
+              color: aqua;
+          }
+          button:hover{
+              background-color: red;
+          }
+          .area5{
+              width: 2200px;
+              padding-left: 180px;
+              padding-right: 180px;
+              height: 500px;
+          }
+          .area6{
+              margin-top: 5px;
+              display: inline-block;
+              margin-left: 50px;
+              width: 600px;
+              height:450px;
+              border: 2px solid #6c6c6c;
+              border-radius: 20px;
+              text-align: center;
+          }
+          .area6 img{
+              margin-top: 30px;
+          }
+          .txt2{
+              margin-top: 5px;
+              font-size: 50px;
+          }
+          .txt3{
+          
+              font-size: 30px;
+              color: #6c6c6c;
+              
+          }
+         .area6 button{
+              height: 70px;
+              width: 200px;
+              border-radius: 5px;
+              background-color: rgba(#000,0.2);
+              color: #ccc;
+              line-height: 70px;
+              font-size: 30px;
+              margin-top: 20px;
+              background-color:#d8374d;
+              font-weight: bolder;
+              color: white;
+              cursor: pointer;
+          }
+          .area6 button:hover{
+              background-color: red;
+          }
+          .area7{
+              width: 2500px;
+              border: 2px solid #6c6c6c;
+              text-align: center;
+          }
+          .area8{
+              position: fixed;
+              z-index: 999;
+              top:40%;
+              left:80%;
+              text-align: center;
+          }
+          .img1{
+              margin-top: -60px;
+          }
+          .area9{
+              width: 300px;
+              height: 330px;
+              background-color: #d8374d;
+              border-radius:20px;
+              margin-top: -30px;
+          }
+          .area9 button{
+            background-color: #d8374d;
+            color: white;
+            width: 300px;
+            height: 110px;
+            line-height: 110px;
+            font-size: 40px;
+            font-weight: bolder;  
+            cursor: pointer;    
+            border:none;
+          }
+          .area9 button:hover{
+              background-color: red;
+          }
+         </style>
+     </head>
+     <body>
+        <div class="area1">
+          <img src="images/pdd-1.png">
+          <ul>
+               <li><a href="pdd-1.html" target="_blank">首页</a></li>
+               <li><a href="#" target="_blank">商家入驻</a></li>
+               <li><a href="#" target="_blank">热点资讯</a></li>
+               <li><a href="#" target="_blank">爱心扶贫</a></li>
+               <li><a href="#" target="_blank">社会招聘</a></li>
+               <li><a href="#" target="_blank">校园招聘</a></li>
+               <li><a href="#" target="_blank">帮助中心</a></li>
+               <li><a href="#" target="_blank">廉政举报</a></li>
+          </ul>
+        </div>
+        <div class="area2">
+              <ul>
+                    <li><a href="#">招商首页</a></li>
+                    <li><a href="#">入驻要求</a></li>
+                    <li><a href="#">资质要求</a></li>
+                    <li><a href="#">常见问题</a></li>
+              </ul>
+        </div>
+        <div class="area3" id="area3">
+            <div class="area4">
+                <p class="txt1">境内商家入驻</p>
+                <input type="text" placeholder="请输入手机号" >
+                <input type="text" placeholder="请输入验证码" class="input2">
+                <button class="btn2" >获取验证码</button>
+                <button id="btn1">0员入驻</button>
+                <a href="#" > 入驻手册</a>
+          </div>
+        </div>
+        <div area class="area5">
+            <div class="area6">
+              <img src ="images/pdd-12.png">
+              <p class="txt2">入驻流程</p>
+              <p class="txt3">入驻前查看，新手开店不用慌</p>
+              <button>立即查看</button>
+            </div>
+            <div class="area6">
+                <img src ="images/pdd-13.png">
+                <p class="txt2">资质要求</p>  
+                <p class="txt3">了解店铺类型/入驻资料/填写要求</p>
+                <button>立即查看</button>
+              </div>
+              <div class="area6">
+                <img src ="images/pdd-14.png">
+                <p class="txt2">常见问题</p>
+                <p class="txt3">帮你解决入驻过程中的各类问题</p>
+                <button>立即查看</button>
+              </div>
+        </div>
+        <div class="area7">
+                    <p class="txt2">未来你将成为他们</p>
+                    <p class="txt3">创业新平台，让你走上致富之路</p>
+        </div>
+        <div class="area8" id="movearea">
+            <img src = "images/pdd-15.png" id="moveimg"  onmouseout="returnmouse()" onmouseover="changemouse()"><br>
+            <img  class="img1"src = "images/pdd-16.png">
+            <div class="area9">
+                     <button>在线客服</button>
+                     <button>入驻流程</button>
+                     <button>点击收起</button>
+            </div>
+        </div>
+     </body>
+     <script>
+        window.onload = function changebi(){         //改变背景图片 简单的动态效果 可以用swiper插件来做 效果可以达到和原网页差不多
+                  var img = document.getElementById("area3");
+                  setInterval(function(){
+                             img.style.backgroundImage="url(images/pdd-11.png)";
+                  }, 3000);
+                  setInterval(function(){
+                             img.style.backgroundImage="url(images/pdd-10.png)";
+                  }, 6000);        
+              }
+        window.onload = function () {       
+                 var box1 = document.getElementById("movearea");   
+                 box1.onmousedown = function (event) {     
+                           event = window.event;
+                           var ol = event.clientX - box1.offsetLeft;         
+                           var ot = event.clientY - box1.offsetTop;           
+                           document.onmousemove = function (event) {     
+                                  var left = event.clientX - ol;       
+                                  var top = event.clientY - ot;          
+                                  box1.style.left = left+"px";          
+                                  box1.style.top = top+"px";        
+                            }                
+                           document.onmouseup = function (event) {      
+                                  document.onmousemove = null;     
+                                  document.onmouseup = null;      
+                      }          
+                }      
+        }
+
+       function changemouse(){
+        var img = document.getElementById("moveimg");
+                    img.style.cursor = "move";
+       }
+       function returnmouse(){
+        var img = document.getElementById("moveimg");
+                    img.style.cursor = "default";
+       }
+    </script>
+ </html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script>
+     /*   function imgsize(){  //输入图片的宽度和高度，方便设置link-height的值,测试时使用
+            var w = $("#img1").css("width");
+            var h = $("#img1").height();
+            alert("width="+w+"  height="+h);
+        }
+ */
+     function move(){ //可能这是我仿写的简易界面的唯一一个动态效果，鼠标悬停再图片上，图片移出来
+      var ar = document.getElementById("area5");
+      ar.style.transition="0.5s";
+      ar.style.left = "0px";  
+     }
+     function back(){ //可能这是我仿写的简易界面的唯一一个动态效果，鼠标悬停再图片上，图片移出来
+      var ar = document.getElementById("area5");
+      ar.style.transition="0.5s";
+      ar.style.left = "-80px";  
+     }
+     $(document).ready(function(){ //用JQ再实现一遍，复习一下JQ。
+         $("#area5").mouseover(function(){
+             $("#area5").css("left","0px");
+         });
+         $("#area5").mouseout(function(){
+             $("#area5").css("left","-80px");
+         });
+     });
+
+    </script>
+    <style>
+      .area1{
+      height:170px;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      border-bottom: 3px solid black;
+      background-color: #fff;
+     }
+     .area1 img{
+        margin-top: 30px;
+     }
+     ul{
+         list-style: none;
+         top:50%;
+         line-height: 30px;
+         height: 30px;
+         margin-top: -15px;
+         position:absolute;
+         left: 400px;
+     }
+     li{
+         display: inline-block;
+         position: relative;
+         font-size: 40px;
+         border-right: 2px solid #6c6c6c;
+     }
+     li:last-child{
+         border: none;
+     }
+     li:first-child a{
+        color:pink;
+     }
+     a{
+         text-decoration: none;
+         color: #6c6c6c;
+         padding-left: 30px;
+         padding-right: 30px;
+
+
+     }
+     img{
+         cursor: pointer;
+
+     }
+    .area2{
+        margin-top: 170px;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 3px soild #6c6c6c;
+    }
+    .area2  img{
+        width: 100%;
+    }
+    .area3 img{
+        width: 100%;
+    }
+    .area3{
+        border-bottom: 3px solid #6c6c6c;
+    }
+    .area4 img{
+        margin-right: 30px;
+        margin-left: 30px;
+        width: 30%;
+        height: 400px;
+    }
+    .area5{
+        position: fixed;
+        top:55%;
+        left: -80px;
+        width: 400px;
+        z-index: 999;
+    }
+    .area5 img{
+        cursor: default;
+    }
+    </style>
+  </head>
+  <body>
+      <div class="area1">
+                     <img src="images/pdd-1.png"   >       
+                     <ul>
+                         <li><a href="#">首页</a></li>
+                         <li><a href="pdd-2.html" target="_blank">商家入驻</a></li>
+                         <li><a href="#">热点资讯</a></li>
+                         <li><a href="#">爱心扶贫</a></li>
+                         <li><a href="#">社会招聘</a></li>
+                         <li><a href="#">商务合作</a></li>
+                         <li><a href="#">帮助中心</a></li>
+                 
+                     </ul> 
+      </div>
+      <div class="area2">
+              <img src="images/pdd-2.jpg"> 
+      </div>
+      <div class="area3">
+            <img src="images/pdd-3.jpg">
+            <div class="area4">
+                <img src="images/pdd-4.jpg">   
+                <img src="images/pdd-5.jpg" >
+                <img src="images/pdd-6.jpg" >
+            </div>              
+      </div>
+      <div class="area3">
+        <img src="images/pdd-3.jpg">
+        <div class="area4">
+             <img src="images/pdd-4.jpg">   
+              <img src="images/pdd-5.jpg" >
+              <img src="images/pdd-6.jpg" >
+        </div>              
+  </div>
+  <div class="area5" id="area5">
+      <img src="images/pdd-7.png" >
+  </div>
+
+  </body>
+
+</html>
+
