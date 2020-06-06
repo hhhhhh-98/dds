@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+         <meta charset="utf-8">
+         <title>pdd-2</title>
+         <script src="js/jquery-3.5.0.min.js"></script>
+         <script>
+             function btn1(){
+                 var btn = document.getElementById("btn1");
+                 btn.style.color="#000";
+                 btn.style.background = "#f00"
+             }
+             function btn2(){
+                 var btn = document.getElementById("btn1");
+                 btn.style.color="#ccc";
+                 btn.style.background = "#fff"
+             }
+             function click1(){
+                 alert("success");
+             }
+         </script>
+         <style>
+           .area1{
+               height:170px;
+               position: fixed;
+               top: 0;
+               right: 0;
+               left: 0;
+               z-index: 999;
+           }
+           .area1 img{
+               margin-top: 40px;
+           }
+           ul{
+               position: absolute;
+               padding: 0;
+           }
+            li{
+            list-style: none;
+            position: relative;
+            display: inline-block;
+           }
+           a{
+            text-decoration: none;
+            font-family: 宋体;
+            font-weight: 500;
+           }
+           .area1 ul{
+               position: absolute;
+               top: 50%;
+               left: 20%;
+               line-height: 30px;
+               margin-top: -5px;
+      
+           }
+           .area1 ul :last-child{
+               border: none;
+           }
+           .area1 li{
+               padding-left: 20px;
+               padding-right: 20px;
+               border-right:2px solid #6c6c6c;       
+           }
+           .area1 a{     
+               color: #6c6c6c;   
+               font-size: 25px;
+           }
+           .area2{
+               height: 80px;
+               line-height: 80px;
+               position: fixed;
+               top:180px;
+               left: 0;
+               right:0;
+               background-color:#d8374d;
+               z-index: 999;
+           }
+           .area2 ul{
+               margin: auto;
+        
+           }
+           .area2 li{
+              font-size: 30px;
+              width: 300px;
+              text-align: center;  
+              height: 80px;
+           }
+           .area2 a{
+               color: white;
+           }
+           .area2 ul li:hover {
+               background:red;               
+           }  
+           .area3{
+               background-image: url(images/pdd-8.png);
+               width: 100%;
+               height: 800px;
+               margin-top: 260px;
+           }
+           .area4{
+              position: absolute;
+              top: 25%;
+              left: 70%;
+              width: 600px;
+              height: 400px;
+       
+              text-align: center;
+          
+          }
+          input{
+              height: 70px;
+              width: 400px;
+              border-radius: 40px;
+              background-color: rgba(#000,0.2);
+              color: #000;
+              line-height: 70px;
+              font-size: 30px;
+              margin-top: 50px;
+             
+          }
+          button{
+            height: 70px;
+              width: 400px;
+              border-radius: 40px;
+              background-color: rgba(#000,0.2);
+              color: #ccc;
+              line-height: 70px;
+              font-size: 30px;
+              margin-top: 50px;
+          }
+         </style>
+     </head>
+     <body>
+        <div class="area1">
+          <img src="images/pdd-1.png">
+          <ul>
+               <li><a href="#" target="_blank">首页</a></li>
+               <li><a href="#" target="_blank">商家入驻</a></li>
+               <li><a href="#" target="_blank">热点资讯</a></li>
+               <li><a href="#" target="_blank">爱心扶贫</a></li>
+               <li><a href="#" target="_blank">社会招聘</a></li>
+               <li><a href="#" target="_blank">校园招聘</a></li>
+               <li><a href="#" target="_blank">帮助中心</a></li>
+               <li><a href="#" target="_blank">廉政举报</a></li>
+          </ul>
+        </div>
+        <div class="area2">
+              <ul>
+                    <li><a href="#">招商首页</a></li>
+                    <li><a href="#">入驻要求</a></li>
+                    <li><a href="#">资质要求</a></li>
+                    <li><a href="#">常见问题</a></li>
+              </ul>
+        </div>
+        <div class="area3">
+            <div class="area4">
+                <input type="text" placeholder="userno" >
+                <input type="password" placeholder="password" >
+                <button id="btn1" onmouseover="btn1()" onmouseout="btn2()" onclick="click1()">login</button>
+          </div>
+        </div>
+     </body>
+ </html>

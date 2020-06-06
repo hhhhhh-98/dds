@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+  <html>
+      <head>
+          <meta charset="utf-8">
+          <title>test</title>
+      </head>
+      <style>
+          .test1{
+              text-align: center;
+          }
+      </style>
+      <script>
+              
+        
+           function getWindowHeightAndWidth(){ //获取浏览器的宽度和高度,测试使用,无实际用处
+               var windowWidth = window.innerWidth;
+               var windowHeight = window.innerHeight;
+               alert("宽度为："+windowWidth+"<br>高度为:"+windowHeight);
+           }
+           function setCanvasWidthAndHeight(){//通过id设置画布的宽度和高度，宽度和高度为整个浏览器的大小
+            var can = document.getElementById("canvas1"); 
+               //确定浏览器支持canvas
+               if(can.getContext){
+                can.width = window.innerWidth;
+                can.height = window.innerHeight;
+               }
+           }
+           function drawLine(){
+            var can = document.getElementById("canvas1");  
+                //确定浏览器支持canvas
+                if(can.getContext){
+                   var context = can.getContext("2d");  
+               
+                   context.rotate(30*Math.PI/180);
+                   context.beginPath();
+                   context.moveTo(500,400);
+                   context.lineTo(500,600);
+                   context.strokeStyle = "#ff0000";     
+          
+                   context.stroke();    
+               }
+
+           }   
+        
+      
+
+      </script>
+      <body onresize="setCanvasWidthAndHeight();drawLine();">
+       <canvas id="canvas1">你的浏览器不支持画布</canvas>
+       
+       
+      </body>
+  </html>
