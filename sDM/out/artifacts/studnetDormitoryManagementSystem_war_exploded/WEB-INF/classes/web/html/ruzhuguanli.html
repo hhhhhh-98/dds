@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <head>
+        <title>入住管理</title>
+        <script>
+            function bt1() {
+                var psd1 = document.getElementById("psd");
+                var psd2 = document.getElementById("psd1");
+                if(psd1.toString()==psd2.toString()){
+                    alert("注册成功！")
+
+                } else{
+                    alert("密码不一致，请重新输入！");
+                    alert(psd1+psd2);
+                }
+            }
+        </script>
+    </head>
+<body>
+<div style="position: absolute ;top: 50% ;left: 50%; transform: translate(-50%,-50%)">
+    <h3 style="color: red">请认真填写以下信息！</h3><br>
+    <form action="zcglServlet" method="post">
+        姓　　名：<input type="text" id="na"><br>
+        学　　号：<input type="text" id="sno"><br>
+        密　　码：<input type="password" id="psd"><br>
+        确认密码：<input type="password" id="psd1"><br>
+        所在寝室：<input type="text" id="ddo"><br>
+        联系方式：<input type="text" id="sph"><br>
+        <input type="submit"value="提交" onclick="bt1()">
+    </form>
+
+
+
+</div>
+</body>
+</html>

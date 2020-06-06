@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+<welcome-file-list>
+    <welcome-file>/html/index.html</welcome-file>
+</welcome-file-list>
+    <servlet>
+        <servlet-name>dologinServlet</servlet-name>
+        <servlet-class>com.hh.sdms.servlet.dologinServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dologinServlet</servlet-name>
+        <url-pattern>/dologinServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>zcglServlet</servlet-name>
+        <servlet-class>com.hh.sdms.servlet.zcglServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>zcglServlet</servlet-name>
+        <url-pattern>/zcglServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
