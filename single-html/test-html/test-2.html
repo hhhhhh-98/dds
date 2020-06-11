@@ -1,0 +1,67 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+ <title>study-1</title>
+ <style>
+   .txt1{
+      font-family: 宋体;
+      color:black;
+      text-decoration: none;
+   }
+   .txt2{
+     font-family: 宋体;
+     color: grey;
+   }
+   .area2{
+     display: none;
+     height:200px;
+     width: 300px;
+     margin-left: 250px;
+     position: absolute;    
+   }
+   .imgsty{
+   text-align: center;
+   margin-top: 5%;
+   }
+   .inputsty{
+     height: 60px;
+     width: 1000px;
+     border-radius: 25px;
+     border-right: none;
+     border: 3px solid blue;
+     font-size: 40px;
+     font-family: 宋体;
+   }
+ </style>
+ <script>
+   function event1(){  //超链接自带hover功能，可以简化，不必写这个函数，刚学习，想自己试试用JS来实现
+     var eve1 = document.getElementById("ar1");
+    eve1.style.display = "block"
+   }
+   function event2(){
+    var eve1 = document.getElementById("ar1");
+    eve1.style.display = "none"
+   }
+ 
+ </script>
+ </head>
+ <body>
+   <div class="area1">
+     &nbsp&nbsp<a href="#" class="txt1">新闻</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#" class="txt1">hao123</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="#" class="txt1">地图</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a  href="#" class="txt1">贴吧</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a onmouseover= "event1()"  onmouseout = "event2()" href="#" class="txt1">更多</a>
+   </div>
+     <div class="area2" id="ar1" onmouseover= "event1()"  onmouseout = "event2()">
+     <span class="txt2"> &nbsp;&nbsp;网盘&nbsp;&nbsp;知道&nbsp;&nbsp;百科&nbsp;&nbsp;图片</span><br><br><br><br><br><br>
+     <span class="txt2"> &nbsp;&nbsp;游戏&nbsp;&nbsp;文库&nbsp;&nbsp;音乐&nbsp;&nbsp;经验</span>
+     </div>
+     <div class="imgsty">
+      <label for="baidu" >  <img style="cursor: pointer;" src="images/bdlogn.png">    </label>   
+      <a id="baidu" href="www.baidu.com"></a>
+     </div>
+     <div style="text-align: center;">
+         <input type="text" class="inputsty">  
+     </div>
+
+
+ </body>
+
+</html>

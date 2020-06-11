@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title>clock</title>
+          <style>
+
+          </style>
+          <script>
+              var flag=0;
+              var drawing = document.getElementById("can");
+              function drawCircle(x,y,r){//以x,y为圆心，r为半径画一个圆
+                var drawing = document.getElementById("can");
+                  if(drawing.getContext){
+                     var context = drawing.getContext("2d");
+                     context.beginPath();
+                     context.arc(x,y,r,0,2*Math.PI);
+                     context.strokeStyle = "#ff0000";
+                     context.stroke();   
+                  }
+                         
+              }
+              function drawColock(){//画表盘 ,用两个圆表示
+                   drawCircle(500,500,300);     
+                   drawCircle(500,500,275);  
+                   setInterval( function(){
+                      drawCircleLine();
+                   },1000);        
+              }
+              function drawCircleLine(){ // 画表针 用一个直线代替 让其旋转
+              var drawing = document.getElementById("can");
+              if(drawing.getContext){
+                  var context = drawing.getContext("2d");
+                  context.strokeStyle = "#000000";
+                  context.translate(500,500);  
+                  context.beginPath();
+                  context.moveTo(500,500);
+                  context.lineTo(500,300); 
+                  context.rotete(flag*6*Math.Pi/180);
+                  context.stroke();
+                  flag++;
+              }
+
+              }
+      
+          </script>
+    </head>
+    <body onresize="drawColock()">
+          <canvas id="can" height="800" width="1200"style="border: 1px solid #000000;">此浏览器不支持canvas对象 </canvas>
+    </body>
+</html>

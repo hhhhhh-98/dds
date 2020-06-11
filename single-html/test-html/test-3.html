@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <meta charset="utf-8">
+       <title>study-2</title>
+       <style>
+           ol ul li{
+               list-style: none;
+           }
+          .area1{
+              height: 50px;
+              background-color: rgba(17, 0, 255,0.8);
+              margin-top: 0;
+              color: white;  
+              line-height: 50px;    
+              font-size: 30px;
+     
+          }
+          .txt1{
+              font-family: 宋体;
+              font-size: 20px;
+              text-decoration: none;
+              color: white;
+              line-height: 50px;
+              margin-left: 20px;
+              margin-right: 20px;
+          }
+          .txt2{
+            font-family: 宋体;
+              font-size: 20px;
+              color: yellow;
+              text-decoration: none;
+              line-height: 50px;
+              margin-left: 20px;
+              margin-right: 20px;
+              
+          }
+          .txt2:hover{
+              text-decoration:underline;
+              text-decoration: yellow;
+          }
+          .txt3{
+              margin-left: 400px;
+          }
+          .imgcss{
+              line-height: 50px;
+              cursor: pointer;
+          }
+          .area2{
+              margin-left:72%;    
+              display: none;
+              position:absolute; 
+              z-index: 2;
+        
+          }
+          .input1css{
+              width:400px;
+              height: 30px;
+              background-color: white;
+              
+          }
+          .area3{
+              background-color: blue;
+              height:150px;
+              line-height:200px;
+              position: relative;
+              z-index: 1;
+          }
+          .area4{
+              height:85px;
+              background-color: aqua;
+          }
+          .txt4{
+              font-family: 宋体;
+              font-size: 30px;
+              color: white;
+              font-weight: bolder;
+              text-decoration: none;
+  
+          }
+         li{         
+              float: left;
+              text-align: center;
+              height: 80px;
+              line-height: 80px;
+              width: 250px;
+              background-color: aqua;
+              list-style-type: none;
+          }
+        .list2{
+         
+            display: none;
+        }
+        .txt5:hover .list2{
+            display: block;
+        }
+         
+       </style>
+       <script>  
+         var flag = 0;//根据flag判断当前元素是隐藏状态还是显示状态
+        function click1() {       
+           var yuansu = document.getElementById("div1");
+            if(flag==0){  //当flag=0，元素处于隐藏，将元素改为显示状态，并将flag改为1
+               yuansu.style.display = "block";
+               flag = 1;
+               return ;
+            }
+            if(flag==1){ // 当flag=1,元素处于显示状状态，修改元素状态，并将flag改为0
+                yuansu.style.display = "none";
+               flag = 0;
+               return ;
+            }
+       
+            
+        }
+       </script>
+    </head>
+    <body>
+    <div class="area1" >
+         <a href="#" class="txt1">在校学生</a>     
+         <a href="#" class="txt1">公众访客</a>
+         <a href="#" class="txt1">  校友  </a>
+         <a href="#" class="txt1">未来学生</a>
+         <a href="#" class="txt1">学生家长</a>      
+         <a href="#" class="txt2 txt3">OA</a> 
+         <a href="#" class="txt2">教务系统</a>
+         <a href="#" class="txt2">教师邮件</a>
+         <a href="#" class="txt2">学生邮件</a>
+         <a href="#" class="txt2">信息门户</a>
+         <a href="#" class="txt2">图书馆 </a>
+         <a href="#" class="txt2">English</a>
+         <img onclick="click1()" class="imgcss" src="images/study-2-1.jpg">
+    </div>
+    <div class="area2" id="div1">
+        <input type="text" class="input1css">
+        <img style="cursor: pointer;" src="images/study-2-1.jpg">        
+    </div>
+    <div class="area3">
+        <img src="images/study-2logo.png">
+      </div>
+    </body>
+    <div class= "area4">
+        <ul>
+        <li class="txt5"><a href="#" class="txt4 ">学校概况</a>   
+             <ul class="list2">
+               <li><a href="" class="txt4">二级目录</a></li>
+               <li><a href="" class="txt4">二级目录</a></li>
+               <li><a href="" class="txt4">二级目录</a></li>
+            </ul>
+       </li>  
+        <li><a href="#" class="txt4">机构设置</a></li>  
+        <li><a href="#" class="txt4">人才培养</a></li>   
+        <li><a href="#" class="txt4">科学研究</a></li> 
+        <li><a href="#" class="txt4">招生就业</a></li>    
+        <li><a href="#" class="txt4">合作交流</a></li> 
+        <li><a href="#" class="txt4">人才招聘</a></li> 
+
+        </ul>
+    
+    </div>
+</HTML>

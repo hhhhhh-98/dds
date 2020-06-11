@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+  <html>
+      <!-- 
+       *
+            这些代码都是学习JS时所编写，全都用的原生JS，许多地方应该用的很不好，代码和注释写的不规范，可能有许多瑕疵。还有许多功能都还没实现，如地鼠不会重后面两排出来，
+            由于只供学习使用，就没有完善，如果后面 会完善这个，就把没有完善的东西列出来，方便完善。
+            1.老鼠只会第一排出现，没有完成老鼠重后两排出来的代码
+            2.完整效果应该有一个开始游戏，点击开始游戏才会开始现在是点击锤子图片，可以把那个绑定到锤子的时间绑定到开始游戏的button上 ，再通过display:none隐藏按钮来实现
+            3.所有代码都用的原生JS来实现，没有使用JQ等框架，所以不知道是不是这个原因，感觉游戏卡卡的，后面可以优化一下
+            4.如果使用框架，许多函数都没必要写，如实现老鼠上下移动的函数moveDS()，可以用JQ的animate来写
+            PS:这个打地鼠的小游戏耗时两天，大佬应该半小时就写得完，对自己的速度还不是很满意，但最终完成了想要的效果，还是小小的有一点沾沾自喜。
+            后续完善的难点：老鼠的位置变成后两排，需要重新判断y坐标，可以用三个if来判断，先判断y坐标在哪一行。写在前面，避免遗忘。
+       *
+      -->
+      <!--
+           第一次完善：通过试玩发现了一个bug，老鼠被打到了不会马上消失，玩家可以通过多次点击来打老鼠，导致分数变高，只能得一分的老鼠可能得几分，
+           所以，再击中后加了一个老鼠的图片display=none；来防止刷分。
+      -->
+      <head>
+          <meta charset="utf-8">
+          <title>打地鼠</title>
+          <style>
+              .area1{
+                  height: 600px;
+                  width: 800px;
+                  background-image: url("images/dds-1.png");       
+              }
+              .imgcss{
+                  position:absolute;
+                  top:50px;
+                  left:50px;
+                  z-index: 3;
+              }
+              .imgcss2{
+                position: absolute;
+                top: 280px;
+                left: 575px;
+                z-index: 1;
+              }
+              .imgcss3{
+                position: absolute;
+                top: 280px;
+                left: 90px;
+                z-index: 2;    
+              }
+              .imgcss4{
+                  position: absolute;
+                  z-index: 4;
+                  display: none;
+              }
+          </style>
+          <script>
+              var score = 0;
+            function getImgWidthAndHeight(){//获取背景图片的宽高，用来设置div区域的宽高，无实际用处，仅开发使用
+                var img = document.getElementById("img1");
+                var imgWidth = img.naturalWidth;
+                var imgHeight = img.naturalHeight; 
+                alert("宽度为："+imgWidth+"  高度为：" +imgHeight);   //下面的两行代码应放在body中，配合函数使用
+            //    <img src="images/dds-2.png" id="img1">
+          //<button onclick="getImgWidthAndHeight()">获取图片宽高</button>
+       
+            }
+            function moveWithMouse(oEvent){
+                //图片随着鼠标移动
+                var x = oEvent.clientX;   //获取鼠标的x坐标
+                var y = oEvent.clientY;   //获取鼠标的y坐标
+                var img1 = document.getElementById("img2"); //获取图片元素
+                img1.style.left = x+"px";     //设置图片的x坐标   引号中的px表示的是像素
+                img1.style.top = y+"px";      //设置图片的y坐标
+            }
+            function startEvent(){
+                //为了让鼠标和锤子图片尽可能匹配，设置点击锤子图片 图片才跟随光标移动
+                var ele = document.getElementById("Main");
+                ele.style.cursor = "none";  //隐藏光标
+                ele.onmousemove=function(){moveWithMouse(event);}
+            }
+            function rotateImg(){ //旋转图片，实现打击效果
+                   var img1 = document.getElementById("img2");//img1在测试中的方法中被使用 
+                   judgeStrike();           
+                   img1.style.transition = "0.1s";
+                   img1.style.transformOrigin = "bottom";
+                   img1.style.transform = "rotate(-80deg)";
+                  
+                   setTimeout(function(){
+                    img1.style.transition = "0.1s";
+                    img1.style.transform = "rotate(0deg)";
+                 
+                   },100);
+           
+            }
+            function moveDs(){  //通过让老鼠图片的top值改变达到让老鼠上下移动一次的效果
+                var ds = document.getElementById("img3");
+                ds.style.display ="block";
+                ds.style.transition = "0.5S"//设置持续时间0.5S
+                ds.style.top = "220PX";  //将老鼠的top设为200px，向上位移20px
+                setTimeout(function(){  //设置延时函数，不设置图片不会产生变化，（可能的原因是JS是单线程，执行向上位移后马上进行执行向下位移，导致视觉上感觉不到变化）？
+                ds.style.transition = "0.5S"
+                ds.style.top = "280PX";
+               },500)
+            }
+            function cycleMoveDs(){
+                setInterval(randomCreateMouse,1000);                       //让老鼠位移的动画循环达到上下移动的效果
+            }
+            function randomCreateMouse(){    //让老鼠随机产生 第一个洞口的letf值为165px;第二个洞口left值为370px;第三个洞口的left值为575px。
+                var ds = document.getElementById("img3");
+                var randint = Math.floor(Math.random()*3)+1;
+                switch(randint){
+                   case 1 :
+                       ds.style.left = "165px";
+                       break;
+                   case 2 :
+                      ds.style.left = "370px";
+                      break;
+                   case 3 :
+                     ds.style.left = "575px";
+                     break;       
+              }
+              ds.style.display = "none";
+             
+               
+              moveDs();
+           }
+        
+            function judgeStrike(){
+                //判断是否集中老鼠 ，img1为锤子 img2为老鼠 img3为击中的特效
+              var img1 = document.getElementById("img2");
+              var img2 = document.getElementById("img3");
+              var img3 = document.getElementById("img4");
+              var img1X = parseInt(img1.style.left);
+              var img1Y =100+ parseInt(img1.style.top);
+              var img2X = parseInt(img2.style.left);
+              var img2Y = parseInt(img2.style.top);
+              var x = img2X+80;
+              if(img2.style.display==="block"){                       // 防止刷分，与下面的display="none"配和使用
+                    if(img1X>img2X&&img1X<x&&img1Y>220&&img1Y<280){  //   通过锤子图片和老鼠图片的坐标比较，判断是否击中。
+                                                               //   因为老鼠的y坐标只有220和280两种，所以只要锤子位于这两个值中间都算集中
+                         img3.style.top=img2Y-20+"px";           //   设置打击效果的值，显示出打击效果
+                         img3.style.left=img2X+20+"px";         
+                         img3.style.display="block";  
+                         score++;                                //   通过全局变量score来记录分数
+                         setTimeout (function(){                 //   击中，击中效果图片在1ms后消失
+                            img3.style.display="none";
+                            img2.style.display="none";          //   让老鼠马上消失 避免刷分,与上面的if配和使用
+                         },100)
+                      
+                    }
+              }
+        //      alert("锤子的X为："+img1X+" 锤子的Y为："+img1Y+" 老鼠的X为:"+img2X+"x为："+x);此行代码在调式时使用
+           } 
+           function endAndGetScore(){
+               alert("你的得分为:"+score);
+           }
+   
+          </script>
+      </head>
+      <body>
+          <div class="area1" id="Main"  >
+                <img src="images/dds-2.png" id="img2" class="imgcss" onclick="startEvent(),rotateImg();">
+                <img src="images/dds-4.png" id="img3" class="imgcss2" onload="cycleMoveDs()">
+                <img src="images/dds-3.png" class = "imgcss3">
+                <img src="images/dds-5.png" id="img4" class="imgcss4">
+        
+          </div>
+           <button onclick="endAndGetScore()">结束游戏</button>
+        
+      </body>
+  </html>

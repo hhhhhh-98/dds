@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        *
+        这个打地鼠2.0主要是在1.0的基础上，使用了jQuery，和1.0相比，流畅度明显提升，但还是卡卡的，新增功能有：
+        1.老鼠不是像1.0那样，只从第一排出来
+        2.多了开始游戏按钮
+        3.结束不是通过点击按钮组件了，而是通过键盘按e结束
+        *
+    -->
+    <head>
+        <meta charset="utf-8">
+        <title>dds2.0</title>
+        <script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
+        <style>
+           .area1{
+               background-image:url(images/dds-1.png);
+               height:600px;
+               width: 800px;
+               text-align: center;    
+               line-height: 600px;
+          
+           }
+           .img1css{
+               position: absolute;
+               display: none;
+               z-index: 4;
+           }
+           .img2css{
+               position: absolute;
+               top:280px;
+               left:575px;
+               z-index: 2; 
+           }
+           .img3css{
+                position: absolute;
+                top: 280px;
+                left: 90px;
+                z-index: 3;    
+                display: none;
+              }
+              .img4css{
+                  position: absolute;
+                  left: 90px;
+                  top: 400px;
+                  z-index: 3;
+              }
+              .img5css{
+                  position: absolute;
+                  left: 90px;
+                  top: 520px;
+                  z-index: 3;
+              }
+              .img6css{
+                  position: absolute;
+                  z-index: 4;
+                  display: none;
+              }
+           .btn1{
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                font-size: 50px;
+                font-weight: bolder;
+                font-family: 宋体;
+                background-color: yellow;
+                z-index: 4;
+           }
+        </style>
+        <script>
+            var score=0;  //全局变量 ，统计分数
+            $(document).ready(function(){  //点击开始游戏按钮 锤子图片跟随光标移动
+                $("#btn1").click(function(){
+                    $(".area1").css("cursor","none");
+                    $(".btn1").css("display","none");
+                    $("#img1").css("display","block");
+                    $("#img3").css("display","block");
+                    $(document).mousemove(function(e){
+                        $("#img1").css({"top" : e.pageY,"left": e.pageX})
+                    });
+                });
+            });
+            $(document).ready(function(){
+                $("#area1").click(function(){
+                      rotateImg();
+                      judgeMouse();
+                });
+            });
+            function  judgeMouse(){
+                var x1 = parseInt($("#img1").css("left"));  //锤子图片的横坐标
+                var y1 = parseInt($("#img1").css("top"));   //锤子图片的纵坐标
+                var x2 = parseInt($("#img2").css("left"));  //地鼠的横坐标
+                var y2 = parseInt($("#img2").css("top"));   //地鼠的纵坐标
+                var x3 = x2+80;
+                var y3 = y2-120;
+                if($("#img2").css("display")==="block"){   //这个if是为了防止刷分，打击一次只能一次得分，如果没有这个if，可以通过反复打击造成分数异常
+                   if(x1>x2&&x1<x3&&y1<y2&&y1>y3){
+                       $("#img6").css({left:x2+30+"px",top:y2-30+"px"})
+                       $("#img6").css("display","block");
+                       score++;
+                       setTimeout(function(){
+                           $("#img6").css("display","none")
+                           $("#img2").css("display","none")
+                        },100);
+                   }
+                }
+
+            }
+            function moveMouseFirst(){
+                $(document).ready(function(){  //老鼠上下移动的效果,第一个洞口的letf值为165px;第二个洞口left值为370px;第三个洞口的left值为575px。 让老鼠重第一排出来    
+                    $("#img2").css("display","block");
+                    $("#img2").animate({top:"280px"},0); //不加这行代码，老鼠始终能看到上下位移的轨迹
+                    $("#img2").animate({top:'240px'},500);
+                    $("#img2").animate({top:'280px'},500);                 
+                });
+            }
+            function moveMouseSecond(){
+                $(document).ready(function(){  //老鼠上下移动的效果,第一个洞口的letf值为165px;第二个洞口left值为370px;第三个洞口的left值为575px。让老鼠重第二排出来           
+                    $("#img2").css("display","block");
+                    $("#img2").animate({top:"400px"},0);
+                    $("#img2").animate({top:'360px'},500);
+                    $("#img2").animate({top:'400px'},500);   
+                });
+            }
+            function moveMouseThird(){
+                $(document).ready(function(){  //老鼠上下移动的效果,第一个洞口的letf值为165px;第二个洞口left值为370px;第三个洞口的left值为575px。让老鼠重第三排出来
+                    $("#img2").css("display","block"); 
+                    $("#img2").animate({top:"520px"},0);
+                    $("#img2").animate({top:'480px'},500);
+                    $("#img2").animate({top:'520px'},500);   
+    
+                });
+            }
+            function randCreatMouse(){  //随机产生老鼠
+                 var randnum = Math.floor((Math.random()*10)+1);        
+                 switch(randnum){
+                     case 1:
+                       $("#img2").css("left","165px");   
+                       moveMouseFirst();
+                       break;
+                     case 2:
+                       $("#img2").css("left","370px"); 
+                       moveMouseFirst(); 
+                       break;
+                     case 3:
+                       $("#img2").css("left","575px");
+                       moveMouseFirst();
+                       break;
+                     case 4:
+                       $("#img2").css("left","165px");
+                       moveMouseSecond();
+                       break;
+                     case 5:
+                       $("#img2").css("left","370px");
+                       moveMouseSecond();
+                       break;
+                     case 6:
+                       $("#img2").css("left","575px");
+                       moveMouseSecond();
+                       break;
+                     case 7:
+                       $("#img2").css("left","165px");
+                       moveMouseThird();          
+                       break;
+                     case 8:
+                       $("#img2").css("left","370px");
+                       moveMouseThird();
+                       break;
+                     case 9:
+                       $("#img2").css("left","575px");
+                       moveMouseThird();
+                       break;
+                 }   
+            }
+            function rotateImg(){ //旋转图片，实现打击效果
+                   var img1 = document.getElementById("img1");         
+                   img1.style.transition = "0.1s";
+                   img1.style.transformOrigin = "bottom";
+                   img1.style.transform = "rotate(-80deg)";    
+                   setTimeout(function(){
+                    img1.style.transition = "0.1s";
+                    img1.style.transform = "rotate(0deg)";
+                 
+                   },100);
+           
+            }
+            $(document).ready(function(){ //开始老鼠的动画循环
+                setInterval(randCreatMouse,1000);
+            });
+            $(document).keyup(function(e){//通过键盘输入e结束游戏，显示得分
+                var keynum = e.which;  //获取输入值的code值
+                if(keynum==69){   //e的code值为69
+                    alert("你的得分为："+score);
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <div class="area1" id="area1" >
+            <img src="images/dds-2.png" id="img1" class="img1css">  
+            <img src="images/dds-4.png" id="img2" class="img2css">
+            <img src="images/dds-3.png" id="img3" class="img3css">
+            <img src="images/dds-6.png" id="img4" class="img4css">
+            <img src="images/dds-7.png" id="img5" class="img5css">
+            <img src="images/dds-5.png" id="img6" class="img6css">
+            <button id="btn1" class="btn1">开始游戏</button>
+        </div>    
+          
+    </body>
+</html>
