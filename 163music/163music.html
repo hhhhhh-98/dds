@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>163.music</title> 
+         <link rel="stylesheet" href="css/swiper.min.css">
+         <script src="js/jquery-3.5.0.min.js"></script>
+        <style>
+          
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .area1{
+                width: 100%;
+                height: 90px;
+                background-color: rgb(36, 36, 36);    
+                line-height: 90px;
+            }
+            .area1 img {
+                cursor: pointer;
+                margin-left: 230px;
+                margin-top: 12px;
+                position: absolute;
+                
+            }
+            .area1 ul{
+                margin-left: 465px;
+                position: absolute;
+            }
+         
+            .area1 ul li {
+   
+                display: inline-block;
+            }
+            .area1 li{
+                height: 90px;
+                line-height: 90px;
+                 padding-left: 25px;
+                 padding-right: 25px;
+                text-align: center;
+                color: white;
+            } 
+              .area1 li:first-child{
+                background-color: black;
+            }
+            .area1 li:hover{
+                background-color: black;
+            }
+            .area1 input{
+                border-radius: 30px;
+                height: 40px;
+                margin-left: 1120px;
+                border: none;
+            }
+            .area1 button{
+                border-radius: 30px;
+                height: 40px;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-left: 20px;
+                background-color: rgb(36, 36, 36);
+                border: 1px solid rgb(58,58,58);
+                color: white;
+            }
+            .area1 button:hover{
+                border: 1px solid white;
+            }
+            .area2{
+                width: 100%;
+                height: 50px;
+                background-color: rgb(194, 12, 12);
+                display: flex;
+            }
+            .area2 ul{
+                margin-left: 465px;
+                position: absolute;
+            }
+         
+            .area2 ul li {
+   
+                display: inline-block;
+            }
+            .area2 li{
+                height: 50px;
+                line-height: 50px;
+                 padding-left: 25px;
+                 padding-right: 25px;
+                text-align: center;
+                color: white;
+                font-size: 10px;
+            } 
+              .area2 li:first-child{
+                background-color: rgb(155,9,9);
+                height: 20px;
+                line-height: 20px;
+                border-radius: 20px;
+            }
+            .area2 li:hover{
+                background-color: rgb(155,9,9);
+                height: 20px;
+                line-height: 20px;
+                border-radius: 20px;
+            }
+            .area3{
+                height: 370px;
+                width: 100%;
+                
+                text-align: center;
+                background-image: url(images/163-2-bg.jpg);
+                
+            }
+            .swiper-container{
+                height: 370px;
+                width: 1100px;     
+                text-align: center;       
+            }
+            .swiper-container img{
+                width: 1020px;
+            }
+            .swiper-wrapper{
+                line-height: 370px;
+            }
+            .area4{
+                margin-left: 440px;
+    
+                display: flex;
+                height: 800px;
+            }
+            .area4-1{
+              
+                width: 1000px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .area4-1-nav{
+                width: 100%;
+                border-bottom: 2px solid red;
+                height: 60px;
+                line-height: 60px;
+            }
+            .area4-1-nav a{
+                color: rgb(102, 102, 127);
+                font-size: 14px;
+                padding-left: 30px;
+                padding-right: 30px;
+                float: left;
+                text-decoration: none;
+            }
+            .area4-1-nav a:first-child{
+                color: rgb(51, 51, 51);
+                font-size: 20px;
+                margin-left: 30px;
+            }
+            .area4-1-nav a:last-child{
+                float: right;
+                margin-right: 30px;
+                margin-top: 5px;
+            }
+            .area4-1-nav a:hover{
+                text-decoration: underline;
+            }
+            .area4-1-pic {          
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+            }
+            .area4-1-pic ul li{
+                display: inline-block;
+            }
+            .area4-1-pic li{
+                list-style: none;
+                width: 150px;
+                height: 200px;
+                margin-top: 20px;
+                margin-left: 40px;
+            }
+            .area4-1-pic li img{
+                cursor: pointer;
+                display: inline;
+                
+            }
+            .area4-1-pic li a{
+                color: black;
+                text-decoration: none;
+                text-align: left;
+                font-size: 14px;
+            }
+            .area4-1-pic   .list2{
+                margin-left: 10px;
+            }
+            .area4-1-pic li a:hover{
+                text-decoration: underline;
+            }
+            .area4-1-pic .txt2{
+                  color: rgb(51, 51, 51);
+            }
+            .area4-1-nav-2{
+                margin-top: 50px;
+            }
+            .area4-1-nav-3{
+               display: flex;
+               margin-top: 15px;
+            }
+            .area4-1-nav-3-1{
+                display: flex;
+                flex-direction: column;
+                background-color: rgb(231, 231, 231);
+                height: 400px;
+                width: 300px;
+                padding-left: 20px;
+                padding-top: 20px;
+                margin-left: 15px;
+            }
+            .area4-1-nav-3-1-1{
+                display: flex;
+                width: 100px;
+                white-space: nowrap;
+            }
+            .area4-1-nav-3-1-1 img{
+                display: inline-block;
+            }
+            .area4-1-nav-3-1-1 a{
+              color: rgb(58,58,58);
+              font-size: 20px;
+              font-weight: bold;
+              text-decoration: none;
+            }
+            .area4-1-nav-3-1 ol li{
+                height: 40px;
+                width: 100%;
+                text-align: left;
+                margin-left: 15px;
+                line-height: 40px;
+            }
+            .area4-1-nav-3-1 li a{
+                text-decoration: none;
+                color: black;
+            }
+            .area4-1-nav-3-1 li a:hover{
+                text-decoration: underline;
+            }
+            .area4-1-nav-3-1 li:last-child{
+                list-style: none;
+            }
+            .area4-1-nav-3-1 li:last-child a{
+                float: right;
+                margin-right: 100px;
+                font-size: 14px;
+                color: rgb(58,58,58);
+            }
+            .area4-1-nav-3-1 ol li:nth-child(odd){
+                   background-color: rgb(255, 255, 255);
+            }
+            .area4-2{
+       
+                width: 300px;
+        
+            }
+            .area4-2-1{
+                background-color: rgb(231, 231, 231);
+                height: 120px;
+                color: rgb(102, 102, 127);
+                font-size: 14px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 20px;
+            }
+            .area4-2-1 button{
+                background-color: rgb(195,10,16);
+                margin-top: 30px;
+                border-radius: 8px;
+                height: 35px;
+                line-height: 35px;
+                color: white;
+                width: 110px;
+                border: none;
+            }
+            .area4-2-1 button:hover{
+               background-color:   rgb(227,35,42);
+            }
+            .area4-2-2-1{
+                margin-top: 10px;
+                height: 30px;
+                line-height: 30px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border-bottom: 1px solid rgb(120, 120, 120);
+            }
+            .area4-2-2-1 a:first-child{
+                 text-decoration: none;
+                 color: black;
+                 font-weight: bold;
+              
+            }
+            .area4-2-2-1 a:last-child{
+                text-decoration: none;
+                color: rgb(58,58,58);
+                float: right;
+                margin-right: 10px;
+            }
+            .area4-2-2 ul li{
+                list-style: none;
+                width: 100%;
+                background-color: rgb(231, 231, 231);
+                margin-top: 25px;
+                height: 65px;
+       
+               
+            }
+            .area4-2-2 ul li img{
+                 float: left;
+                 margin-left: 20px;
+                 clear: both;
+                
+            }
+            .area4-2-2 .txt3{
+                margin-top: 15px;
+                font-size: 16px;
+                color: black;
+            }
+            .area4-2-2 .txt4{
+                font-size: 10px;
+                color: rgb(58,58,58);
+                margin-top: 15px;
+          
+            }
+            
+        </style>
+    </head>
+    <body>
+       <div class="area1">
+           <img src="images/163-1.png" title="网易云">
+           <ul>
+               <li>发现音乐</li>
+               <li>我的音乐</li>
+               <li>朋友</li>
+               <li>商城</li>
+               <li>音乐人</li>
+               <li>下载客户端</li>
+           </ul>
+           <input type="text" placeholder="音乐/视频/电台/用户">
+           <button>创作者中心</button>
+       </div>
+       <div class="area2">
+          <ul>
+            <li>推荐</li>
+            <li>排行榜</li>
+            <li>歌单</li>
+            <li>主播电台</li>
+            <li>歌手</li>
+            <li>新碟上架</li>
+           </ul>
+       </div>
+       <div class="area3">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="images/163-2.png"></div>
+              <div class="swiper-slide"><img src="images/163-3.png"></div>
+              <div class="swiper-slide"><img src="images/163-4.png"></div>
+              <div class="swiper-slide"><img src="images/163-5.png"></div>
+              <div class="swiper-slide"><img src="images/163-6.png"></div>
+              <div class="swiper-slide"><img src="images/163-7.png"></div>
+              <div class="swiper-slide"><img src="images/163-8.png"></div>
+              <div class="swiper-slide"><img src="images/163-9.png"></div>
+              <div class="swiper-slide"><img src="images/163-10.jpg"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+       </div>  
+       <div class="area4">
+            <div class="area4-1">
+                <div class="area4-1-nav">
+                    <a href="#">热门推荐</a><a href="#">华语</a><a href="#">流行</a><a href="#">摇滚</a><a href="#">民谣</a><a href="#">电子</a><a href="#">更多</a>
+                </div>
+                <div class="area4-1-pic">
+                    <div class="area4-1-pic">
+                        <ul>
+                            <li><img src="images/area4-1-1.jpg"><a href="#">日落月升｜幸好还有音乐悄悄为我披上隐形衣</a></li>   
+                            <li><img src="images/area4-1-2.jpg"><a href="#">相互不说话的日子里，你在干嘛 </a></li>   
+                            <li><img src="images/area4-1-3.jpg"><a href="#">听完这些歌，要不要来场甜甜的恋爱 </a></li>   
+                            <li><img src="images/area4-1-4.png"><a href="#">甜甜的晚安故事（2）猜猜我有多爱你 </a></li>   
+                            <li><img src="images/area4-1-5.jpg"><a href="#">神仙翻唱 | 好听到单曲循环 </a></li>   
+                            <li><img src="images/area4-1-6.png"><a href="#">和能让你快乐的人谈恋爱 </a></li>   
+                            <li><img src="images/area4-1-7.jpg"><a href="#">【丧】|我把所有情绪都留给了网易云 </a></li>   
+                            <li><img src="images/area4-1-8.jpg"><a href="#">一吻天荒</a><p>&nbsp;</p></li>   
+                        </ul>
+                    </div>
+                </div>
+                <div class="area4-1-nav area4-1-nav-2">
+                    <a href="#">新碟上架</a><a href="#">更多</a>
+                </div>
+                <div class="area4-1-pic">
+                        <ul>
+                            <li class="list2"><img src="images/area4-1-9.jpg"><br><a href="#">节奏病</a><br><a class="txt2" href="#">刘雨昕XIN</a></li>
+                            <li class="list2"><img src="images/area4-1-10.jpg"><br><a href="#">Chromatica</a><br><a class="txt2" href="#">Lady Gaga</a></li>
+                            <li class="list2"><img src="images/area4-1-11.png"><br><a href="#">掉了</a><br><a class="txt2" href="#">王子昇</a></li>
+                            <li class="list2"><img src="images/area4-1-12.png"><br><a href="#">情人</a><br><a class="txt2" href="#">蔡徐坤</a></li>
+                            <li class="list2"><img src="images/area4-1-13.jpg"><br><a href="#">温泉</a><br><a class="txt2" href="#">许嵩/刘美曦</a></li>
+                        </ul>
+                </div>
+                <div class="area4-1-nav ">
+                    <a href="#">榜单</a><a href="#">更多</a>
+               
+                </div>
+                <div class="area4-1-nav-3">
+                    <div class="area4-1-nav-3-1">
+                        <div class="area4-1-nav-3-1-1">
+                            <img src="images/area4-3-1.png">
+                            <a href="#">云音乐飙升榜</a>
+                        </div>
+                        <ol>
+                            <li><a href="#">赤伶</a></li>
+                            <li><a href="#">下落不明</a></li>
+                            <li><a href="#">Eyes on me(live)</a></li>
+                            <li><a href="#">演员(live)</a></li>
+                            <li><a href="#">爱是怀疑(live)</a></li>
+                            <li><a href="#">就让我忘了曾经的那个人</a></li>
+                            <li><a href="#">花样年华</a></li>
+                            <li><a href="#">Love is gone</a></li>
+                            <li><a href="#">怪咖(live)</a></li>
+                            <li><a href="#">山妖</a></li>
+                            <li><a href="#">查看全部></a></li>
+                        </ol>
+                    </div>
+                    <div class="area4-1-nav-3-1">
+                        <div class="area4-1-nav-3-1-1">
+                            <img src="images/area4-3-2.png">
+                            <a href="#">云音乐新歌榜</a>
+                        </div>
+                        <ol>
+                            <li><a href="#">赤伶</a></li>
+                            <li><a href="#">下落不明</a></li>
+                            <li><a href="#">Eyes on me(live)</a></li>
+                            <li><a href="#">演员(live)</a></li>
+                            <li><a href="#">爱是怀疑(live)</a></li>
+                            <li><a href="#">就让我忘了曾经的那个人</a></li>
+                            <li><a href="#">花样年华</a></li>
+                            <li><a href="#">Love is gone</a></li>
+                            <li><a href="#">怪咖(live)</a></li>
+                            <li><a href="#">山妖</a></li>
+                            <li><a href="#">查看全部></a></li>
+                        </ol>
+                    </div>
+                    <div class="area4-1-nav-3-1">
+                        <div class="area4-1-nav-3-1-1">
+                            <img src="images/area4-3-3.png">
+                            <a href="#">云音乐原创歌曲榜</a>
+                        </div>
+                        <ol>
+                            <li><a href="#">赤伶</a></li>
+                            <li><a href="#">下落不明</a></li>
+                            <li><a href="#">Eyes on me(live)</a></li>
+                            <li><a href="#">演员(live)</a></li>
+                            <li><a href="#">爱是怀疑(live)</a></li>
+                            <li><a href="#">就让我忘了曾经的那个人</a></li>
+                            <li><a href="#">花样年华</a></li>
+                            <li><a href="#">Love is gone</a></li>
+                            <li><a href="#">怪咖(live)</a></li>
+                            <li><a href="#">山妖</a></li>
+                            <li><a href="#">查看全部></a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="area4-2">
+                <div class="area4-2-1">
+                    <p>登录网易云音乐，可以享受无限收</p>
+                    <p>藏的乐趣，并且无限同步到手机。</p>
+                    <button>用户登录</button>
+                </div>
+                <div class="area4-2-2">
+                    <div class="area4-2-2-1">
+                        <a href="#">入驻歌手</a><a href="#">查看全部></a>
+                    </div>
+                    <div>
+                    <ul>
+                        <li><img src="images/area4-2-2-1.png"><p class="txt3">张惠妹aMEI</p> </p><p class="txt4">台湾歌手张惠妹</p></li>
+                        <li><img src="images/area4-2-2-2.jpg"><p class="txt3">音乐人赵雷</p> </p><p class="txt4">民谣歌手</p></li>
+                        <li><img src="images/area4-2-2-3.jpg"><p class="txt3">Fine乐团</p> </p><p class="txt4">独立音乐人</p></li>
+                        <li><img src="images/area4-2-2-4.jpg"><p class="txt3">王三博</p> </p><p class="txt4">音乐人</p></li>
+                        <li><img src="images/area4-2-2-5.png"><p class="txt3">万晓利</p> </p><p class="txt4">台湾歌手张惠妹</p></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+       </div>
+       <script src="js/swiper.min.js"></script>  
+       <script>
+            var swiper = new Swiper('.swiper-container', {
+         autoplay:true,
+         loop:true,
+         keyboard: {
+        enabled: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+     </script>
+    </body>
+
+
+</html>
