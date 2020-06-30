@@ -1,5 +1,8 @@
 <template>
   <div class="test1">
+    <!--
+      简单的计算器，通过输入数字，选择+-*/符号 自动生成结果 并显示
+    -->
     {{msg}} <br />
     <input type="text" v-model="num1" v-on:input="cacul()"/>
     <select v-model="sel" v-on:change="cacul()">
@@ -25,7 +28,7 @@ export default {
     }
   },
   methods: {
-    cacul: function () {
+    cacul: function () { // 计算并更新结果
       switch (this.sel) {
         case '0':
           this.result = parseInt(this.num1) + parseInt(this.num2)
